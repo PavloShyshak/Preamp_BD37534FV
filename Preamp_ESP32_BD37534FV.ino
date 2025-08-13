@@ -6,7 +6,7 @@
 #include <Wire.h>
 #include <BD37534FV.h>  // https://github.com/liman324/BD37534FV/archive/master.zip
 #include <EEPROM.h>
-#include "AiEsp32RotaryEncoder.h" https://github.com/igorantolic/ai-esp32-rotary-encoder
+#include "AiEsp32RotaryEncoder.h" // https://github.com/igorantolic/ai-esp32-rotary-encoder
 #include "AiEsp32RotaryEncoderNumberSelector.h"
 #include <IRremote.hpp>
 #include <IRreceive.hpp>
