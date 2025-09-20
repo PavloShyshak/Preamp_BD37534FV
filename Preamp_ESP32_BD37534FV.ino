@@ -6,7 +6,7 @@
 #include <Wire.h>
 #include <BD37534FV.h>  // https://github.com/liman324/BD37534FV/archive/master.zip
 #include <EEPROM.h>
-#include "AiEsp32RotaryEncoder.h" // https://github.com/igorantolic/ai-esp32-rotary-encoder
+#include "AiEsp32RotaryEncoder.h" //https://github.com/igorantolic/ai-esp32-rotary-encoder
 #include "AiEsp32RotaryEncoderNumberSelector.h"
 #include <IRremote.hpp>
 #include <IRreceive.hpp>
@@ -284,7 +284,7 @@ void Menu() {
   if (Button_Esc_Click() && Mode > 0) {
     Mode--;
     RightTFT();
-    gfx->fillScreen(BACKGROUND);
+   // gfx->fillScreen(BACKGROUND);//---------------------------------
     if (Mode == MODE_RUN) {
       MainScreen();
     }
@@ -395,13 +395,13 @@ void Menu() {
         break;
       case 3:
         mid_q = Level2_Index;
-        bd.setBass_setup(mid_q, mid_f);
+        bd.setMiddle_setup(mid_q, mid_f);
         gfx->print("Middle Q factor    ");
         gfx->println(MiddleQ[mid_q]);  // 0.75 1.0 1.25 1.5 = int 0...3
         break;
       case 4:
         mid_f = Level2_Index;
-        bd.setBass_setup(mid_q, mid_f);
+        bd.setMiddle_setup(mid_q, mid_f);
         gfx->print("Middle frequency    ");
         gfx->println(MiddleF[mid_f]);  // 500Hz 1kHz 1.5kHz 2.5kHz = int 0...3
         break;
@@ -414,13 +414,13 @@ void Menu() {
         break;
       case 6:
         treb_q = Level2_Index;
-        bd.setBass_setup(treb_q, treb_f);
+        bd.setTreble_setup(treb_q, treb_f);
         gfx->print("Treble Q factor    ");
         gfx->println(TrebleQ[treb_q]);  // 0.75 1.25   = int 0...1
         break;
       case 7:
         treb_f = Level2_Index;
-        bd.setBass_setup(treb_q, treb_f);
+        bd.setTreble_setup(treb_q, treb_f);
         gfx->print("Treble frequency    ");
         gfx->println(TrebleF[treb_f]);  // 7.5kHz 10kHz 12.5kHz 15kHz = int 0...3
         break;
@@ -603,7 +603,7 @@ void loop() {
           if (Mode == MENU_LEVEL1) {
             Mode = MODE_RUN;
             RightTFT();
-            gfx->fillScreen(BACKGROUND);
+           // gfx->fillScreen(BACKGROUND);//---------------------------
             MainScreen();
           }
           break;
